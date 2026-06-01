@@ -1,24 +1,15 @@
-console.log("🔥 Script started");
-
 const container = document.getElementById("embers");
 
-console.log("📦 Ember container:", container);
+function spawnEmber() {
+  const ember = document.createElement("div");
+  ember.classList.add("ember");
 
-if (!container) {
-  console.log("❌ #embers NOT FOUND");
-} else {
-  setInterval(() => {
-    const e = document.createElement("div");
+  ember.style.left = Math.random() * 100 + "vw";
+  ember.style.animationDuration = (3 + Math.random() * 4) + "s";
 
-    e.style.position = "absolute";
-    e.style.width = "6px";
-    e.style.height = "6px";
-    e.style.background = "orange";
-    e.style.left = Math.random() * 100 + "vw";
-    e.style.top = "100vh";
+  container.appendChild(ember);
 
-    document.body.appendChild(e);
-
-    setTimeout(() => e.remove(), 3000);
-  }, 200);
+  setTimeout(() => ember.remove(), 6000);
 }
+
+setInterval(spawnEmber, 120);
