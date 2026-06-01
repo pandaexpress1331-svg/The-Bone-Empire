@@ -1,59 +1,16 @@
-body {
-  margin: 0;
-  background: radial-gradient(circle at top, #1a1a1a, #000);
-  color: #d6ccb7;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+const container = document.getElementById("embers");
+
+function spawnEmber() {
+  const ember = document.createElement("div");
+  ember.classList.add("ember");
+
+  ember.style.left = Math.random() * 100 + "vw";
+
+  container.appendChild(ember);
+
+  setTimeout(() => {
+    ember.remove();
+  }, 5000);
 }
 
-/* center content */
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* button */
-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: transparent;
-  border: 1px solid #666;
-  color: #d6ccb7;
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: orange;
-}
-
-/* embers layer */
-#embers {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-
-/* ember particles */
-.ember {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: orange;
-  border-radius: 50%;
-  animation: rise 4s linear forwards;
-}
-
-@keyframes rise {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-100vh);
-    opacity: 1;
-  }
-}
+setInterval(spawnEmber, 200);
