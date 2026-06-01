@@ -13,3 +13,4 @@ function spawnEmber() {
 }
 
 setInterval(spawnEmber, 120);
+ 
