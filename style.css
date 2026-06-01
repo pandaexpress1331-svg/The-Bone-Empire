@@ -9,3 +9,21 @@ body {
     radial-gradient(circle at 70% 80%, rgba(30,50,40,0.25), transparent 50%),
     #0b0b0b;
 }
+
+
+
+.fog-layer {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+  animation: fogMove 20s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes fogMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(100px, -50px); }
+}
