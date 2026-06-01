@@ -1,16 +1,83 @@
-const container = document.getElementById("embers");
-
-function spawnEmber() {
-  const ember = document.createElement("div");
-  ember.classList.add("ember");
-
-  ember.style.left = Math.random() * 100 + "vw";
-
-  container.appendChild(ember);
-
-  setTimeout(() => {
-    ember.remove();
-  }, 5000);
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: #d6ccb7;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-setInterval(spawnEmber, 200);
+/* fog layer */
+.fog {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+  animation: fogMove 10s infinite linear;
+}
+
+@keyframes fogMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
+/* layout */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 52px;
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  opacity: 0.7;
+}
+
+.enter {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid #666;
+  color: #d6ccb7;
+  cursor: pointer;
+}
+
+.menu {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.menu button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #444;
+  color: #d6ccb7;
+  padding: 10px 15px;
+}
+
+/* embers */
+#embers {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ember {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: orange;
+  border-radius: 50%;
+  animation: rise 4s linear forwards;
+}
+
+@keyframes rise {
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-100vh); opacity: 1; }
+}
