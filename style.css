@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  /* Bone Empire world base */
+  background:
+    radial-gradient(circle at 30% 20%, rgba(215,122,42,0.15), transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(30,50,40,0.25), transparent 50%),
+    #0b0b0b;
+}
