@@ -11,66 +11,51 @@ body {
     linear-gradient(to bottom, #050505, #0b0b0b);
 }
 
-/* 🌫 Fog */
+/* fog */
 .fog-layer {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
-  animation: fogMove 18s linear infinite;
+  background: rgba(255,255,255,0.03);
   pointer-events: none;
   z-index: 1;
 }
 
-@keyframes fogMove {
-  from { transform: translate(0,0); }
-  to { transform: translate(120px, -60px); }
-}
-
-/* 🧠 Layout */
+/* layout */
 .container {
   position: relative;
   z-index: 2;
   height: 100vh;
-  width: 100vw;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   text-align: center;
 }
 
-/* ☠ Title */
 .title {
-  font-size: 52px;
-  letter-spacing: 4px;
+  font-size: 50px;
 }
 
-/* Subtitle */
 .subtitle {
   opacity: 0.7;
 }
 
-/* Button */
 .enter-btn {
   margin-top: 20px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   background: transparent;
   border: 1px solid #777;
   color: #d6ccb7;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .enter-btn:hover {
   border-color: #d77a2a;
-  box-shadow: 0 0 20px rgba(215,122,42,0.3);
 }
 
-/* Menu */
+/* menu */
 .menu {
-  margin-top: 40px;
+  margin-top: 30px;
   display: flex;
   gap: 10px;
 }
@@ -79,28 +64,22 @@ body {
   background: rgba(255,255,255,0.05);
   border: 1px solid #444;
   color: #d6ccb7;
-  padding: 10px 16px;
-  cursor: pointer;
+  padding: 10px 15px;
 }
 
-.menu button:hover {
-  background: rgba(215,122,42,0.2);
-  border-color: #d77a2a;
-}
-
-/* 🔥 Embers */
+/* embers */
 #embers {
   position: fixed;
   inset: 0;
-  z-index: 3;
   pointer-events: none;
+  z-index: 3;
 }
 
 .ember {
   position: absolute;
-  width: 3px;
-  height: 3px;
-  background: rgba(215,122,42,0.9);
+  width: 4px;
+  height: 4px;
+  background: orange;
   border-radius: 50%;
   animation: rise linear forwards;
 }
