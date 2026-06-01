@@ -12,7 +12,7 @@ body {
   color: #d6ccb7;
 }
 
-/* 🌫 FOG MUST BE ON TOP OF BACKGROUND BUT BELOW UI */
+/* 🌫 FOG MUST BE VISIBLE ABOVE BACKGROUND */
 .fog-layer {
   position: fixed;
   inset: 0;
@@ -27,17 +27,19 @@ body {
   to { transform: translate(120px, -60px); }
 }
 
-/* 🧠 FIXED LAYOUT CENTERING (THIS IS KEY) */
+/* 🧠 FIX: FULL SCREEN CENTERING (THIS WAS THE ISSUE) */
 .container {
   position: relative;
   z-index: 2;
+
+  height: 100vh;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
   text-align: center;
 }
 
@@ -45,7 +47,7 @@ body {
 .title {
   font-size: 52px;
   letter-spacing: 4px;
-  text-shadow: 0 0 10px rgba(215,122,42,0.4);
+  text-shadow: 0 0 15px rgba(215,122,42,0.4);
 }
 
 /* SUBTITLE */
@@ -91,7 +93,6 @@ body {
 .menu button:hover {
   background: rgba(215,122,42,0.2);
   border-color: #d77a2a;
-  transform: scale(1.05);
 }
 
 /* 🔥 EMBERS */
