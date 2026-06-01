@@ -1,33 +1,47 @@
-window.addEventListener("DOMContentLoaded", () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Bone Empire</title>
 
-  const emberContainer = document.getElementById("embers");
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  if (!emberContainer) {
-    console.log("❌ #embers not found in HTML");
-    return;
-  }
+<body>
 
-  function createEmber() {
-    const ember = document.createElement("div");
-    ember.classList.add("ember");
+  <!-- 🌫 Fog layer (required for atmosphere) -->
+  <div class="fog-layer"></div>
 
-    ember.style.left = Math.random() * 100 + "vw";
+  <!-- 🧠 Main UI -->
+  <div class="container">
 
-    const size = Math.random() * 4 + 2;
-    ember.style.width = size + "px";
-    ember.style.height = size + "px";
+    <h1 class="title">☠ THE BONE EMPIRE ☠</h1>
 
-    ember.style.animationDuration = (3 + Math.random() * 5) + "s";
+    <p class="subtitle">A NEW EMPIRE RISES FROM THE ASHES</p>
 
-    emberContainer.appendChild(ember);
+    <button class="enter-btn">ENTER THE EMPIRE</button>
 
-    setTimeout(() => {
-      ember.remove();
-    }, 8000);
-  }
+    <div class="status">
+      Server Status: <span class="online">ONLINE</span> | Players: 84
+    </div>
 
-  setInterval(createEmber, 120);
+    <!-- 🪨 Menu buttons -->
+    <div class="menu">
+      <button>LEADERBOARDS</button>
+      <button>DINO SKINS</button>
+      <button>LIVE CHAT</button>
+      <button>SERVER MAP</button>
+    </div>
 
-});
+  </div>
 
 
+  <div id="embers"></div>
+
+ 
+  <script src="script.js"></script>
+
+</body>
+</html>
